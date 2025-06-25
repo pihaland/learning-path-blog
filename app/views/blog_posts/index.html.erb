@@ -1,0 +1,11 @@
+<h1>My block</h1>
+
+<% @blog_posts.each do |post| %>
+  <div>
+    <h2>
+      <%= link_to post.title, post %>
+    </h2>
+    <%= post.title %>
+    <%= post.body %>
+  </div>
+<% end %>
