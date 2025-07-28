@@ -2,10 +2,18 @@
 
 <% @blog_posts.each do |post| %>
   <div>
-    <h2>
-      <%= link_to post.title, post %>
-    </h2>
-    <%= post.title %>
-    <%= post.body %>
+
+    <div class="border p-4 m-2 rounded">
+      <h2><%= link_to post.title, post %></h2>
+      <% if post.draft? %>
+        <div class="p-2 rounded bg-gray-100 text-gray-900">Draft</div>
+      <% end %>
+      <% if post.scheduled? %>
+        <div class="p-2 rounded bg-blue-300 text-gray-900">Scheduled</div>
+      <% end %>
+
+      <%= post.title %>
+      <%= post.body %>
+    </div>
   </div>
 <% end %>
