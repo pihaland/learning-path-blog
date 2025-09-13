@@ -17,7 +17,6 @@ class BlogPostsController < ApplicationController
   def new
     if user_signed_in?
       @blog_post = BlogPost.new
-      pp "ALERT"
     else
       redirect_to root_path
     end
@@ -58,7 +57,7 @@ class BlogPostsController < ApplicationController
   end
 
   def blog_post_params
-    params.require(:blog_post).permit(:title, :content, :published_at)
+    params.require(:blog_post).permit(:title, :content, :cover_image, :published_at)
   end
 
 end

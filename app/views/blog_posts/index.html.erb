@@ -4,6 +4,8 @@
   <div>
 
     <div class="border p-4 m-2 rounded">
+      <%= image_tag post.cover_image if post.cover_image.attached?%>
+
       <h2><%= link_to post.title, post %></h2>
       <% if post.draft? %>
         <div class="p-2 rounded bg-gray-100 text-gray-900">Draft</div>
